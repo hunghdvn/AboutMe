@@ -1,4 +1,6 @@
 ﻿@page "/"
+@inject ThemeService ThemeService
+@implements IDisposable
 
 <PageTitle>HungHD - A .Net developer</PageTitle>
 
@@ -8,3 +10,23 @@
 		<Welcome />
 	</div>
 </div>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+	{
+		await base.OnInitializedAsync();
+		ThemeService.OnThemeChanged += ThemeChangedHandler;
+		await ThemeService.LoadThemeFromLocalStorage();
+	}
+
+    private void ThemeChangedHandler()
+    {
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        ThemeService.OnThemeChanged -= ThemeChangedHandler;
+    }
+}

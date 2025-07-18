@@ -6,6 +6,7 @@
     justify-content: center;
     padding: 0;
     font-size: 1.1rem;
+    border: 1px solid white;
 }
 
 .profile-img-container {
@@ -16,7 +17,7 @@
     border: 3px solid rgba(255, 255, 255, 0.7);
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.27);
+    box-shadow: 0 0px 40px var(--bs-shadow-color);
     transition: box-shadow 0.25s ease-in-out, border-color 0.3s ease-in-out;
 }
 
@@ -29,5 +30,5 @@
 
     .profile-img-container:hover {
         border: 3px solid white;
-        box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0px 15px var(--bs-shadow-color);
     }

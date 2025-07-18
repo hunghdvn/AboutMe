@@ -1,4 +1,4 @@
-.valid.modified:not([type=checkbox]) {
+﻿.valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;
 }
 
@@ -101,4 +101,96 @@ code {
 
     .loading-bar-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
+    }
+
+:root {
+    --bs-body-bg: #f8f9fa; /* Màu nền trang */
+    --bs-body-color: #212529; /* Màu chữ chính */
+    --bs-navbar-link-color: rgba(0,0,0,.55); /* Màu chữ link navbar */
+    --bs-primary-text: #0d6efd; /* Màu chữ primary */
+    --bs-secondary-text: #6c757d; /* Màu chữ secondary/muted */
+    --bs-btn-outline-secondary-color: #6c757d; /* Màu border/text của nút outline-secondary */
+    --bs-btn-outline-secondary-hover-bg: #6c757d; /* Màu nền hover của nút outline-secondary */
+    --bs-btn-outline-secondary-hover-color: #f8f9fa; /* Màu chữ hover của nút outline-secondary */
+    --bs-shadow-color: rgba(0, 0, 0, 0.3); /* Màu shadow mặc định */
+    --bs-border-color: rgba(255, 255, 255, 0.7); /* Màu border mặc định (hơi xám) */
+}
+
+/* Định nghĩa màu sắc cho chế độ tối (thêm lớp .dark-mode vào body) */
+body.dark-mode {
+    --bs-body-bg: #212529;
+    --bs-body-color: #f8f9fa;
+    --bs-navbar-link-color: rgba(255,255,255,.75);
+    --bs-primary-text: #6daffc;
+    --bs-secondary-text: #adb5bd;
+    --bs-btn-outline-secondary-color: #adb5bd;
+    --bs-btn-outline-secondary-hover-bg: #adb5bd;
+    --bs-btn-outline-secondary-hover-color: #212529;
+    --bs-shadow-color: rgba(255, 255, 255, 0.3);
+    --bs-border-color: rgba(255, 255, 255, 0.7); /* Giữ nguyên hoặc điều chỉnh nếu muốn border dark mode khác */
+}
+
+/* Các quy tắc áp dụng cho chế độ sáng (mặc định) */
+.text-primary {
+    color: var(--bs-primary-text) !important;
+}
+
+.text-secondary,
+.text-muted {
+    color: var(--bs-secondary-text) !important;
+}
+
+/* Các quy tắc ghi đè CỤ THỂ cho chế độ tối */
+body.dark-mode .text-primary {
+    color: var(--bs-primary-text) !important;
+}
+
+body.dark-mode .text-secondary,
+body.dark-mode .text-muted {
+    color: var(--bs-secondary-text) !important;
+}
+
+/* Áp dụng biến CSS cho các phần tử */
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Đảm bảo div bao ngoài cùng cũng sử dụng biến nền */
+.bg-light.min-vh-100 { /* Thêm selector cụ thể hơn để ghi đè bg-light nếu cần */
+    background-color: var(--bs-body-bg) !important; /* Quan trọng để ghi đè bg-light */
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        color: var(--bs-navbar-link-color) !important; /* Áp dụng cho link và brand */
+    }
+
+.text-primary {
+    color: var(--bs-primary-text) !important;
+}
+
+.text-secondary, .text-muted { /* Áp dụng cùng biến cho text-muted */
+    color: var(--bs-secondary-text) !important;
+}
+
+/* Nút chuyển đổi chủ đề */
+.btn-outline-secondary {
+    border: none !important;
+    color: var(--bs-btn-outline-secondary-color) !important;
+    background-color: transparent !important;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0;
+}
+
+    .btn-outline-secondary:hover {
+        background-color: var(--bs-btn-outline-secondary-hover-bg) !important;
+        color: var(--bs-btn-outline-secondary-hover-color) !important;
+        border-color: transparent !important;
     }
