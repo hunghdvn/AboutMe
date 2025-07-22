@@ -114,6 +114,7 @@ code {
     --bs-btn-outline-secondary-hover-color: #f8f9fa; /* Màu chữ hover của nút outline-secondary */
     --bs-shadow-color: rgba(0, 0, 0, 0.3); /* Màu shadow mặc định */
     --bs-border-color: rgba(255, 255, 255, 0.7); /* Màu border mặc định (hơi xám) */
+    --bs-navbar-toggler-icon-color-light: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Định nghĩa màu sắc cho chế độ tối (thêm lớp .dark-mode vào body) */
@@ -128,7 +129,27 @@ body.dark-mode {
     --bs-btn-outline-secondary-hover-color: #212529;
     --bs-shadow-color: rgba(255, 255, 255, 0.3);
     --bs-border-color: rgba(255, 255, 255, 0.7); /* Giữ nguyên hoặc điều chỉnh nếu muốn border dark mode khác */
+    --bs-navbar-toggler-icon-color-dark: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
+.navbar-toggler-icon {
+    background-image: var(--bs-navbar-toggler-icon-color-light); /* Mặc định là icon đen */
+}
+
+body.dark-mode .navbar-toggler-icon {
+    background-image: var(--bs-navbar-toggler-icon-color-dark) !important; /* Quan trọng: Icon trắng trong Dark Mode */
+}
+
+.navbar-toggler {
+    border: none !important; /* ĐÃ THAY ĐỔI: Bỏ border */
+    /* Bạn cũng có thể muốn loại bỏ box-shadow mặc định của Bootstrap khi focus */
+    box-shadow: none !important;
+}
+
+    .navbar-toggler:focus {
+        box-shadow: none !important; /* Đảm bảo không có box-shadow khi focus */
+        outline: 0 !important; /* Tùy chọn: Loại bỏ outline mặc định của trình duyệt */
+    }
 
 /* Các quy tắc áp dụng cho chế độ sáng (mặc định) */
 .text-primary {
@@ -188,9 +209,3 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 0;
 }
-
-    .btn-outline-secondary:hover {
-        background-color: var(--bs-btn-outline-secondary-hover-bg) !important;
-        color: var(--bs-btn-outline-secondary-hover-color) !important;
-        border-color: transparent !important;
-    }

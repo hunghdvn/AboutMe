@@ -1,53 +1,26 @@
-﻿@inject ThemeService ThemeService
-@implements IDisposable
-
-<nav class="navbar navbar-expand-lg navbar-light">
+﻿<nav class="navbar navbar-expand-lg navbar-light">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="/"></a>
+		<a class="navbar-brand" href="/">
+			<img src="favicon.ico" alt="Your Logo" style="height: 30px; margin-right: 8px;">
+			HungHD Profile
+		</a>
 
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
+		<div class="d-flex align-items-center d-lg-none">
+			<ThemeSwitch />
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 			<ul class="navbar-nav">
 				@* <li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
-				</li> *@
-				<li class="nav-item">
-					<button class="btn btn-outline-secondary rounded-pill" @onclick="ToggleTheme" style="width: 40px; height: 40px; flex-shrink: 0;">
-						<i class="fas @(ThemeService.GetCurrentTheme() == "dark" ? "fa-sun" : "fa-moon")"></i>
-					</button>
-				</li>
+					<a class="nav-link" href="#">Giới thiệu</a>
+				</li>*@
 			</ul>
+
+			<div class="d-none d-lg-flex ms-lg-3">
+				<ThemeSwitch />
+			</div>
 		</div>
 	</div>
 </nav>
-
-@code {
-	protected override async Task OnInitializedAsync()
-	{
-		await base.OnInitializedAsync();
-		ThemeService.OnThemeChanged += ThemeChangedHandler;
-		await ThemeService.LoadThemeFromLocalStorage();
-	}
-
-	// Xử lý khi chủ đề thay đổi
-	private void ThemeChangedHandler()
-	{
-		// Yêu cầu component render lại để cập nhật icon
-		StateHasChanged();
-	}
-
-	// Phương thức được gọi khi nút được click
-	private async Task ToggleTheme()
-	{
-		await ThemeService.ToggleTheme();
-	}
-
-	// Quan trọng: Hủy đăng ký sự kiện khi component bị loại bỏ để tránh rò rỉ bộ nhớ
-	public void Dispose()
-	{
-		ThemeService.OnThemeChanged -= ThemeChangedHandler;
-	}
-}
