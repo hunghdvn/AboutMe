@@ -1,7 +1,7 @@
 # Thiết kế: Trang Chính sách bảo mật (Privacy Policy)
 
 - Ngày: 2026-08-19
-- Trạng thái: Đã được user duyệt (phiên bản 2: giới thiệu chung chung, dùng cho nhiều app)
+- Trạng thái: Đã được user duyệt (phiên bản 3: không header, không nhắc tên cá nhân, app mọi lứa tuổi)
 
 ## Bối cảnh
 
@@ -16,15 +16,15 @@
 1. File `AboutMe/Pages/PrivacyPolicy.razor`, route `@page "/privacy-policy"`.
    - URL production: `https://hunghd.io.vn/privacy-policy` — dùng làm link Privacy Policy trên Play Console cho nhiều app.
 2. Nội dung **tiếng Việt**, chung chung (không nhắc tên app cụ thể, không nhắc website portfolio), gồm các mục:
-   1. Giới thiệu (chính sách áp dụng cho các ứng dụng do developer phát hành trên Google Play)
+   1. Giới thiệu (chính sách áp dụng cho các ứng dụng do "chúng tôi" phát hành trên Google Play — không nhắc tên cá nhân cụ thể)
    2. Thông tin KHÔNG thu thập (không đăng ký/đăng nhập, không form, không trực tiếp thu thập thông tin cá nhân)
    3. Quảng cáo (Google AdMob: Google & đối tác có thể thu thập thông tin thiết bị, ID quảng cáo Android, dữ liệu tương tác; người dùng tắt được quảng cáo cá nhân hóa tại adssettings.google.com)
    4. Dữ liệu lưu cục bộ trên thiết bị (chỉ lưu thiết lập, không gửi đi đâu, xóa được)
    5. Liên kết đến trang bên ngoài (chịu chính sách của bên thứ ba)
-   6. Trẻ em (không hướng đến trẻ dưới 13 tuổi)
+   6. Trẻ em (ứng dụng phù hợp mọi lứa tuổi; không thu thập cố ý thông tin trẻ dưới 13)
    7. Thay đổi chính sách
    8. Liên hệ (Facebook, GitHub, WhatsApp của developer)
-3. Giao diện theo pattern `Home.razor`: wrapper `bg-light min-vh-100`, `<Header />`, Bootstrap classes, dark mode qua `app.css` có sẵn.
+3. Giao diện theo pattern `Home.razor`: wrapper `bg-light min-vh-100`, Bootstrap classes, dark mode qua `app.css` có sẵn. **Không có `<Header />`** (user không muốn header trên trang này).
 4. Không sửa Header/nav bar.
 
 ## Kiểm chứng
