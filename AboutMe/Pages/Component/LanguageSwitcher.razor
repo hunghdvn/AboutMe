@@ -1,0 +1,37 @@
+@inject NavigationManager Nav
+
+<div class="d-flex align-items-center gap-2">
+	<i class="fas fa-globe text-secondary"></i>
+	<select class="form-select form-select-sm w-auto" @onchange="OnLangChanged">
+		@foreach (var lang in Languages)
+		{
+			<option value="@lang.Code" selected="@(lang.Code == CurrentLang ? "selected" : null)">@lang.Name</option>
+		}
+	</select>
+</div>
+
+@code {
+	[Parameter] public string AppSlug { get; set; } = "htodo";
+	[Parameter] public string CurrentLang { get; set; } = "vi";
+
+	private static readonly (string Code, string Name)[] Languages =
+	{
+		("vi", "Tiếng Việt"),
+		("en", "English"),
+		("es", "Español"),
+		("th", "ไทย"),
+		("ru", "Русский"),
+		("ja", "日本語"),
+		("ko", "한국어"),
+		("zh", "中文"),
+		("it", "Italiano"),
+	};
+
+	private void OnLangChanged(ChangeEventArgs e)
+	{
+		var lang = e.Value?.ToString();
+		if (string.IsNullOrWhiteSpace(lang)) return;
+		var url = lang == "vi" ? $"/privacy-policy/{AppSlug}" : $"/privacy-policy/{AppSlug}/{lang}";
+		Nav.NavigateTo(url);
+	}
+}

@@ -19,6 +19,7 @@
    - `vi` (mặc định, không suffix) · `en` · `es` · `th` · `ru` · `ja` · `ko` · `zh` · `it`
    - File: `PrivacyPolicyHTodo.razor` + `PrivacyPolicyHTodo<Lang>.razor` (en/es/th/ru/ja/ko/zh/it).
    - Nội dung cùng 7 mục, cùng sự thật — chỉ khác ngôn ngữ. Play Console dùng 1 URL (user chọn); app link tới phiên bản khớp ngôn ngữ thiết bị.
+   - **Language switcher**: component `LanguageSwitcher` (dropdown globe icon, góc trên phải) cho phép người truy cập đổi ngôn ngữ — điều hướng SPA sang URL tương ứng. Include vào mọi trang privacy.
 3. Nội dung tiếng Việt, riêng cho từng app:
    - **HTodo**: ứng dụng ghi việc cần làm, **offline hoàn toàn, không AdMob, không thu thập dữ liệu**, mọi lứa tuổi.
    - Các mục: Giới thiệu (tên app + H2D Dev) → KHÔNG thu thập (kèm offline) → Dữ liệu cục bộ (todo lưu trên thiết bị) → Link bên ngoài → Trẻ em (mọi lứa tuổi) → Thay đổi → Liên hệ.
