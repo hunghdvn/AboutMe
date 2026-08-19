@@ -1,7 +1,7 @@
 # Thiết kế: Trang Chính sách bảo mật (Privacy Policy)
 
 - Ngày: 2026-08-19
-- Trạng thái: Đã được user duyệt (phiên bản 3: không header, không nhắc tên cá nhân, app mọi lứa tuổi)
+- Trạng thái: Đã được user duyệt (phiên bản 4: luôn theme light)
 
 ## Bối cảnh
 
@@ -26,6 +26,10 @@
    8. Liên hệ (Facebook, GitHub, WhatsApp của developer)
 3. Giao diện theo pattern `Home.razor`: wrapper `bg-light min-vh-100`, Bootstrap classes, dark mode qua `app.css` có sẵn. **Không có `<Header />`** (user không muốn header trên trang này).
 4. Không sửa Header/nav bar.
+5. **Theme luôn light**: trang chính sách luôn hiển thị theme light bất kể theme đã lưu.
+   - `app.js`: khi path là `/privacy-policy`, bỏ qua logic dark-mode lúc tải trang (tránh flash dark).
+   - `PrivacyPolicy.razor`: `OnInitializedAsync` xóa class `dark-mode` khỏi body (xử lý điều hướng trong SPA).
+   - Không ghi đè `localStorage` — theme đã lưu của user được giữ nguyên, home vẫn dark như cũ.
 
 ## Kiểm chứng
 

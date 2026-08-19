@@ -10,6 +10,11 @@ window.updateBodyThemeClass = (theme) => {
 // Khởi tạo theme khi tải trang (cần để tránh "flash" nếu Blazor tải chậm)
 // Chỉ chạy hàm này một lần khi trang được tải.
 (function () {
+    // Trang chính sách bảo mật luôn dùng theme light
+    if (window.location.pathname.startsWith('/privacy-policy')) {
+        document.body.classList.remove('dark-mode');
+        return;
+    }
     const savedTheme = localStorage.getItem('theme');
     // Mặc định là 'dark-mode' nếu chưa có hoặc là 'dark'
     if (savedTheme === 'dark' || savedTheme === null) {

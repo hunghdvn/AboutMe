@@ -1,0 +1,71 @@
+@page "/privacy-policy"
+@inject IJSRuntime JS
+
+<PageTitle>Chính sách bảo mật - HungHD</PageTitle>
+
+<div class="bg-light min-vh-100">
+	<div class="container px-4">
+		<div class="py-5">
+			<h1 class="display-5 fw-bold">Chính sách bảo mật</h1>
+			<p class="text-secondary mb-4">Hiệu lực từ: 19/08/2026</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">1. Giới thiệu</h2>
+			<p class="text-secondary">
+				Chính sách bảo mật này ("Chính sách") mô tả cách các ứng dụng di động
+				do chúng tôi phát hành trên Google Play Store
+				(sau đây gọi chung là "Ứng dụng") thu thập, sử dụng và bảo vệ thông tin của người dùng.
+			</p>
+			<p class="text-secondary">Bằng việc cài đặt và sử dụng Ứng dụng, bạn đồng ý với các nội dung của Chính sách này.</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">2. Thông tin chúng tôi KHÔNG thu thập</h2>
+			<ul class="text-secondary">
+				<li>Ứng dụng không yêu cầu đăng ký hay đăng nhập tài khoản.</li>
+				<li>Ứng dụng không có bất kỳ biểu mẫu nhập liệu nào.</li>
+				<li>Chúng tôi không trực tiếp thu thập, lưu trữ hay xử lý thông tin cá nhân của bạn (họ tên, email, số điện thoại, địa chỉ, vị trí, v.v.).</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">3. Quảng cáo</h2>
+			<ul class="text-secondary">
+				<li>Ứng dụng có thể hiển thị quảng cáo do cung cấp bởi Google AdMob.</li>
+				<li>Google và các đối tác của Google có thể thu thập và sử lý một số thông tin (như thông tin thiết bị, ID quảng cáo Android, dữ liệu về tương tác của bạn với ứng dụng) nhằm mục đích hiển thị và đo lường quảng cáo.</li>
+				<li>Bạn có thể tắt quảng cáo cá nhân hóa trong cài đặt của thiết bị hoặc tại trang
+					<a href="https://adssettings.google.com" target="_blank" rel="noopener">Cài đặt quảng cáo của Google</a>.</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">4. Dữ liệu lưu cục bộ trên thiết bị</h2>
+			<ul class="text-secondary">
+				<li>Ứng dụng có thể lưu một số thiết lập (ví dụ: giao diện) vào bộ nhớ cục bộ trên thiết bị của bạn.</li>
+				<li>Dữ liệu này chỉ được dùng để ghi nhớ lựa chọn của bạn, không bao giờ được gửi đến máy chủ hay bất kỳ bên thứ ba nào.</li>
+				<li>Bạn có thể xóa dữ liệu này bất cứ lúc nào bằng cách xóa dữ liệu ứng dụng trong cài đặt thiết bị.</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">5. Liên kết đến trang bên ngoài</h2>
+			<ul class="text-secondary">
+				<li>Ứng dụng có thể chứa các liên kết đến các dịch vụ bên ngoài.</li>
+				<li>Khi bạn truy cập các dịch vụ đó, bạn sẽ được điều chỉnh theo chính sách bảo mật của chính các dịch vụ này. Chúng tôi không chịu trách nhiệm về nội dung hay chính sách của bên thứ ba.</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">6. Trẻ em</h2>
+			<p class="text-secondary">Ứng dụng phù hợp với mọi lứa tuổi. Chúng tôi không thu thập cố ý bất kỳ thông tin cá nhân nào từ trẻ em dưới 13 tuổi. Cha mẹ hoặc người giám hộ có thể giám sát và quản lý nội dung mà trẻ tiếp xúc khi sử dụng ứng dụng.</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">7. Thay đổi chính sách</h2>
+			<p class="text-secondary">Chúng tôi có thể cập nhật Chính sách này theo thời gian. Mọi thay đổi sẽ được đăng tại trang này.</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">8. Liên hệ</h2>
+			<p class="text-secondary">Nếu bạn có câu hỏi về Chính sách này, vui lòng liên hệ với chúng tôi qua:</p>
+			<ul class="text-secondary">
+				<li>Facebook: <a href="https://www.facebook.com/hoanghungittb" target="_blank" rel="noopener">facebook.com/hoanghungittb</a></li>
+				<li>GitHub: <a href="https://github.com/hunghdvn" target="_blank" rel="noopener">github.com/hunghdvn</a></li>
+				<li>WhatsApp: +84 963 243 462</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        // Trang chính sách luôn hiển thị theme light
+        await JS.InvokeVoidAsync("document.body.classList.remove", "dark-mode");
+    }
+}
