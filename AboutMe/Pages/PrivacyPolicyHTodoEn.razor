@@ -1,0 +1,63 @@
+@page "/privacy-policy/htodo/en"
+@inject IJSRuntime JS
+
+<PageTitle>Privacy Policy - HTodo</PageTitle>
+
+<div class="bg-light min-vh-100">
+	<div class="container px-4">
+		<div class="py-5">
+			<h1 class="display-5 fw-bold">Privacy Policy</h1>
+			<p class="text-secondary mb-4">Effective date: August 19, 2026</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">1. Introduction</h2>
+			<p class="text-secondary">
+				This Privacy Policy ("Policy") applies to the <strong>HTodo</strong> application
+				published by <strong>H2D Dev</strong> ("we") on the Google Play Store.
+			</p>
+			<p class="text-secondary">By installing and using HTodo, you agree to the terms of this Policy.</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">2. Information We Do NOT Collect</h2>
+			<ul class="text-secondary">
+				<li>HTodo works completely offline and does not require an internet connection.</li>
+				<li>The app does not require registration or account login.</li>
+				<li>The app has no input forms.</li>
+				<li>We do not collect, store, or process any personal information about you (name, email, phone number, address, location, etc.).</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">3. Data Stored Locally on Your Device</h2>
+			<ul class="text-secondary">
+				<li>HTodo stores your to-do list in local storage on your device.</li>
+				<li>This data exists only on your device and is never sent to any server or third party.</li>
+				<li>You can delete this data at any time by clearing the app's data in your device settings.</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">4. Links to External Pages</h2>
+			<ul class="text-secondary">
+				<li>The app may contain links to external services.</li>
+				<li>When you visit those services, you are subject to their own privacy policies. We are not responsible for the content or policies of third parties.</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">5. Children</h2>
+			<p class="text-secondary">HTodo is suitable for all ages. We do not intentionally collect any personal information from children under 13. Parents or guardians can monitor and manage the content their children are exposed to when using the app.</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">6. Changes to This Policy</h2>
+			<p class="text-secondary">We may update this Policy from time to time. Any changes will be posted on this page.</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">7. Contact</h2>
+			<p class="text-secondary">If you have any questions about this Policy, please contact us via:</p>
+			<ul class="text-secondary">
+				<li>Facebook: <a href="https://www.facebook.com/hoanghungittb" target="_blank" rel="noopener">facebook.com/hoanghungittb</a></li>
+				<li>GitHub: <a href="https://github.com/hunghdvn" target="_blank" rel="noopener">github.com/hunghdvn</a></li>
+				<li>WhatsApp: +84 963 243 462</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        // Trang chính sách luôn hiển thị theme light
+        await JS.InvokeVoidAsync("document.body.classList.remove", "dark-mode");
+    }
+}

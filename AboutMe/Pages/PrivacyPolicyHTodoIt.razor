@@ -1,0 +1,63 @@
+@page "/privacy-policy/htodo/it"
+@inject IJSRuntime JS
+
+<PageTitle>Informativa sulla privacy - HTodo</PageTitle>
+
+<div class="bg-light min-vh-100">
+	<div class="container px-4">
+		<div class="py-5">
+			<h1 class="display-5 fw-bold">Informativa sulla privacy</h1>
+			<p class="text-secondary mb-4">In vigore dal: 19/08/2026</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">1. Introduzione</h2>
+			<p class="text-secondary">
+				La presente Informativa sulla privacy ("Informativa") si applica all'applicazione
+				<strong>HTodo</strong> pubblicata da <strong>H2D Dev</strong> ("noi") su Google Play Store.
+			</p>
+			<p class="text-secondary">Installando e utilizzando HTodo, accetti i termini della presente Informativa.</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">2. Informazioni che NON raccogliamo</h2>
+			<ul class="text-secondary">
+				<li>HTodo funziona completamente offline e non richiede una connessione a internet.</li>
+				<li>L'app non richiede registrazione né accesso ad un account.</li>
+				<li>L'app non contiene moduli di inserimento dati.</li>
+				<li>Non raccogliamo, memorizziamo né trattiamo alcuna informazione personale su di te (nome, email, numero di telefono, indirizzo, posizione, ecc.).</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">3. Dati memorizzati localmente sul tuo dispositivo</h2>
+			<ul class="text-secondary">
+				<li>HTodo memorizza la tua lista di attività nella memoria locale del tuo dispositivo.</li>
+				<li>Questi dati esistono solo sul tuo dispositivo e non vengono mai inviati a server o a terze parti.</li>
+				<li>Puoi eliminare questi dati in qualsiasi momento cancellando i dati dell'app nelle impostazioni del dispositivo.</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">4. Link a pagine esterne</h2>
+			<ul class="text-secondary">
+				<li>L'app può contenere link a servizi esterni.</li>
+				<li>Quando accedi a tali servizi, sei soggetto alle rispettive informative sulla privacy. Non siamo responsabili per i contenuti o le policy di terze parti.</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">5. Minori</h2>
+			<p class="text-secondary">HTodo è adatta a tutte le età. Non raccogliamo intenzionalmente alcuna informazione personale da minori di 13 anni. I genitori o i tutori possono supervisionare e gestire i contenuti a cui i bambini sono esposti durante l'uso dell'app.</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">6. Modifiche all'Informativa</h2>
+			<p class="text-secondary">Potremmo aggiornare la presente Informativa di tanto in tanto. Eventuali modifiche saranno pubblicate in questa pagina.</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">7. Contatti</h2>
+			<p class="text-secondary">Se hai domande sulla presente Informativa, contattaci tramite:</p>
+			<ul class="text-secondary">
+				<li>Facebook: <a href="https://www.facebook.com/hoanghungittb" target="_blank" rel="noopener">facebook.com/hoanghungittb</a></li>
+				<li>GitHub: <a href="https://github.com/hunghdvn" target="_blank" rel="noopener">github.com/hunghdvn</a></li>
+				<li>WhatsApp: +84 963 243 462</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        // Trang chính sách luôn hiển thị theme light
+        await JS.InvokeVoidAsync("document.body.classList.remove", "dark-mode");
+    }
+}

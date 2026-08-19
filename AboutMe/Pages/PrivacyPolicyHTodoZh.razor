@@ -1,0 +1,63 @@
+@page "/privacy-policy/htodo/zh"
+@inject IJSRuntime JS
+
+<PageTitle>隐私政策 - HTodo</PageTitle>
+
+<div class="bg-light min-vh-100">
+	<div class="container px-4">
+		<div class="py-5">
+			<h1 class="display-5 fw-bold">隐私政策</h1>
+			<p class="text-secondary mb-4">生效日期: 2026年8月19日</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">1. 简介</h2>
+			<p class="text-secondary">
+				本隐私政策（"本政策"）适用于由 <strong>H2D Dev</strong>（"我们"）在 Google Play Store
+				上发布的 <strong>HTodo</strong> 应用。
+			</p>
+			<p class="text-secondary">安装并使用 HTodo 即表示您同意本政策的内容。</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">2. 我们不收集的信息</h2>
+			<ul class="text-secondary">
+				<li>HTodo 完全离线运行，无需互联网连接。</li>
+				<li>应用无需注册或登录账户。</li>
+				<li>应用没有任何输入表单。</li>
+				<li>我们不收集、存储或处理您的任何个人信息（姓名、电子邮件、电话号码、地址、位置等）。</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">3. 存储在设备本地的数据</h2>
+			<ul class="text-secondary">
+				<li>HTodo 将您的待办事项列表存储在设备的本地存储中。</li>
+				<li>这些数据仅存在于您的设备上，绝不会发送到任何服务器或第三方。</li>
+				<li>您可以随时通过设备设置中的"清除应用数据"来删除这些数据。</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">4. 指向外部页面的链接</h2>
+			<ul class="text-secondary">
+				<li>应用可能包含指向外部服务的链接。</li>
+				<li>当您访问这些服务时，将受其自身隐私政策的约束。我们对第三方的内容或政策不承担责任。</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">5. 儿童</h2>
+			<p class="text-secondary">HTodo 适合所有年龄段。我们不会故意收集 13 岁以下儿童的个人信息。父母或监护人可以监督和管理儿童使用应用时接触的内容。</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">6. 政策变更</h2>
+			<p class="text-secondary">我们可能会不时更新本政策。任何变更都将在本页面公布。</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">7. 联系我们</h2>
+			<p class="text-secondary">如果您对本政策有任何疑问，请通过以下方式联系我们：</p>
+			<ul class="text-secondary">
+				<li>Facebook: <a href="https://www.facebook.com/hoanghungittb" target="_blank" rel="noopener">facebook.com/hoanghungittb</a></li>
+				<li>GitHub: <a href="https://github.com/hunghdvn" target="_blank" rel="noopener">github.com/hunghdvn</a></li>
+				<li>WhatsApp: +84 963 243 462</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        // Trang chính sách luôn hiển thị theme light
+        await JS.InvokeVoidAsync("document.body.classList.remove", "dark-mode");
+    }
+}

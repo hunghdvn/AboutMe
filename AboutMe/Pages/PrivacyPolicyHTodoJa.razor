@@ -1,0 +1,63 @@
+@page "/privacy-policy/htodo/ja"
+@inject IJSRuntime JS
+
+<PageTitle>プライバシーポリシー - HTodo</PageTitle>
+
+<div class="bg-light min-vh-100">
+	<div class="container px-4">
+		<div class="py-5">
+			<h1 class="display-5 fw-bold">プライバシーポリシー</h1>
+			<p class="text-secondary mb-4">発効日: 2026年8月19日</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">1. 概要</h2>
+			<p class="text-secondary">
+				本プライバシーポリシー（「本ポリシー」）は、<strong>H2D Dev</strong>（「当社」）が
+				Google Play Storeで公開している<strong>HTodo</strong>アプリケーションに適用されます。
+			</p>
+			<p class="text-secondary">HTodoをインストールしご使用いただくことで、本ポリシーの内容に同意いただいたものとします。</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">2. 収集しない情報</h2>
+			<ul class="text-secondary">
+				<li>HTodoは完全にオフラインで動作し、インターネット接続は不要です。</li>
+				<li>アプリはアカウントの登録やログインを必要としません。</li>
+				<li>アプリには入力フォームは存在しません。</li>
+				<li>私たちは、あなたの個人情報（氏名、メールアドレス、電話番号、住所、位置情報など）を収集・保存・処理することはありません。</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">3. デバイスにローカル保存されるデータ</h2>
+			<ul class="text-secondary">
+				<li>HTodoはあなたのタスクリストをデバイスのローカルストレージに保存します。</li>
+				<li>このデータはあなたのデバイス上にのみ存在し、サーバーや第三者に送信されることは一切ありません。</li>
+				<li>デバイスの設定からアプリデータを削除することで、このデータをいつでも削除できます。</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">4. 外部ページへのリンク</h2>
+			<ul class="text-secondary">
+				<li>アプリには外部サービスへのリンクが含まれる場合があります。</li>
+				<li>それらのサービスにアクセスした場合、それぞれのサービスのプライバシーポリシーが適用されます。第三者のコンテンツやポリシーについて、私たちは責任を負いません。</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">5. 児童に関する事項</h2>
+			<p class="text-secondary">HTodoはすべての年齢層に適しています。私たちは13歳未満の児童の個人情報を意図的に収集することはありません。保護者の方は、お子さんがアプリを使用する際に接するコンテンツを監督・管理できます。</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">6. ポリシーの変更</h2>
+			<p class="text-secondary">私たちは本ポリシーを随時更新する場合があります。変更内容は本ページに公示されます。</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">7. お問い合わせ</h2>
+			<p class="text-secondary">本ポリシーについてご質問がある場合は、以下の方法でご連絡ください:</p>
+			<ul class="text-secondary">
+				<li>Facebook: <a href="https://www.facebook.com/hoanghungittb" target="_blank" rel="noopener">facebook.com/hoanghungittb</a></li>
+				<li>GitHub: <a href="https://github.com/hunghdvn" target="_blank" rel="noopener">github.com/hunghdvn</a></li>
+				<li>WhatsApp: +84 963 243 462</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        // Trang chính sách luôn hiển thị theme light
+        await JS.InvokeVoidAsync("document.body.classList.remove", "dark-mode");
+    }
+}

@@ -1,0 +1,63 @@
+@page "/privacy-policy/htodo/th"
+@inject IJSRuntime JS
+
+<PageTitle>นโยบายความเป็นส่วนตัว - HTodo</PageTitle>
+
+<div class="bg-light min-vh-100">
+	<div class="container px-4">
+		<div class="py-5">
+			<h1 class="display-5 fw-bold">นโยบายความเป็นส่วนตัว</h1>
+			<p class="text-secondary mb-4">มีผลบังคับใช้ตั้งแต่วันที่: 19/08/2026</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">1. บทนำ</h2>
+			<p class="text-secondary">
+				นโยบายความเป็นส่วนตัวนี้ ("นโยบาย") ใช้กับแอปพลิเคชัน <strong>HTodo</strong>
+				ที่เผยแพร่โดย <strong>H2D Dev</strong> ("เรา") บน Google Play Store
+			</p>
+			<p class="text-secondary">ด้วยการติดตั้งและใช้งาน HTodo คุณตกลงกับข้อกำหนดของนโยบายนี้</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">2. ข้อมูลที่เราไม่เก็บรวบรวม</h2>
+			<ul class="text-secondary">
+				<li>HTodo ทำงานแบบออฟไลน์ทั้งหมดและไม่ต้องการการเชื่อมต่ออินเทอร์เน็ต</li>
+				<li>แอปพลิเคชันไม่ต้องการการลงทะเบียนหรือเข้าสู่ระบบบัญชี</li>
+				<li>แอปพลิเคชันไม่มีแบบฟอร์มกรอกข้อมูลใดๆ</li>
+				<li>เราไม่เก็บรวบรวม จัดเก็บ หรือประมวลผลข้อมูลส่วนบุคคลของคุณ (ชื่อ, อีเมล, หมายเลขโทรศัพท์, ที่อยู่, ตำแหน่งที่ตั้ง, ฯลฯ)</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">3. ข้อมูลที่จัดเก็บในอุปกรณ์ของคุณ</h2>
+			<ul class="text-secondary">
+				<li>HTodo บันทึกรายการสิ่งที่คุณต้องทำลงในหน่วยความจำภายในของอุปกรณ์ของคุณ</li>
+				<li>ข้อมูลนี้มีอยู่บนอุปกรณ์ของคุณเท่านั้น และจะไม่ถูกส่งไปยังเซิร์ฟเวอร์หรือบุคคลที่สามใดๆ</li>
+				<li>คุณสามารถลบข้อมูลนี้ได้ตลอดเวลาโดยการล้างข้อมูลแอปพลิเคชันในการตั้งค่าอุปกรณ์</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">4. ลิงก์ไปยังหน้าเว็บภายนอก</h2>
+			<ul class="text-secondary">
+				<li>แอปพลิเคชันอาจมีลิงก์ไปยังบริการภายนอก</li>
+				<li>เมื่อคุณเยี่ยมชมบริการเหล่านั้น คุณจะอยู่ภายใต้นโยบายความเป็นส่วนตัวของบริการเหล่านั้น เราไม่รับผิดชอบต่อนโยบายหรือเนื้อหาของบุคคลที่สาม</li>
+			</ul>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">5. เด็ก</h2>
+			<p class="text-secondary">HTodo เหมาะสำหรับทุกวัย เราไม่เก็บรวบรวมข้อมูลส่วนบุคคลของเด็กอายุต่ำกว่า 13 ปีโดยเจตนา พ่อแม่หรือผู้ปกครองสามารถดูแลและจัดการเนื้อหาที่เด็กได้รับเมื่อใช้งานแอปพลิเคชัน</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">6. การเปลี่ยนแปลงนโยบาย</h2>
+			<p class="text-secondary">เราอาจอัปเดตนโยบายนี้เป็นครั้งคราว การเปลี่ยนแปลงใดๆ จะถูกโพสต์บนหน้านี้</p>
+
+			<h2 class="fs-4 fw-semibold mt-4 mb-2">7. ติดต่อ</h2>
+			<p class="text-secondary">หากคุณมีคำถามเกี่ยวกับนโยบายนี้ กรุณาติดต่อเราผ่าน:</p>
+			<ul class="text-secondary">
+				<li>Facebook: <a href="https://www.facebook.com/hoanghungittb" target="_blank" rel="noopener">facebook.com/hoanghungittb</a></li>
+				<li>GitHub: <a href="https://github.com/hunghdvn" target="_blank" rel="noopener">github.com/hunghdvn</a></li>
+				<li>WhatsApp: +84 963 243 462</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        // Trang chính sách luôn hiển thị theme light
+        await JS.InvokeVoidAsync("document.body.classList.remove", "dark-mode");
+    }
+}
